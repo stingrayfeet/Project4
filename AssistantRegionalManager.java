@@ -30,7 +30,7 @@ public class AssistantRegionalManager extends Employee{
 
     //returns a string formatted with the superclass (Employee) toString method, along with the AssistantRegionalManager object's manager and minimumTask member variables
     public String toString() {
-        String result = "Assistant Regional Manager\n" + super.toString() + "\nRegional Manager: " + manager.getName() + "\nMinimum task level: " + minimumTask;
+        String result = "Assistant Regional Manager\n" + super.toString() + "\nRegional Manager: " + manager.getName() + "\nMinimum Task Level: " + minimumTask;
         return result;
     }
 
