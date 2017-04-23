@@ -41,7 +41,7 @@ public class SalesAssociate extends Employee{
     //returns a string formatted with the superclass (Employee) toString method, along with the SalesAssociate object's supervisor and numClients member variables
     public String toString() {
         String temp = null;
-        String result = "Sales Associate\n" + super.toString() + "\nRegional Manager: " + supervisor.getName() + "\nNumber of Clients: " + numClients + "\nProducts to sell: ";
+        String result = "Sales Associate\n" + super.toString() + "\nRegional Manager: " + supervisor.getName() + "\nNumber of clients: " + numClients + "\nProducts to sell: ";
 
         /* iterates over products array and assigns the product at index i to temp
         appends temp onto result */
