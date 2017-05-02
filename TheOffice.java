@@ -1,4 +1,3 @@
-import javax.swing.plaf.synth.Region;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -28,6 +27,7 @@ public class TheOffice {
 
         //First Line is number of employees
         int size = Integer.parseInt(fs.nextLine());
+        System.out.println("size: " + size);
 
         workers = new Employee[size];
 
@@ -38,6 +38,8 @@ public class TheOffice {
         int ATRM = 0;
         //create subordinate array for regional manager
         Employee[] subs = new Employee[size];
+
+
 
         //Loops through file
         for(int i = 0; i < size; i++){
@@ -51,6 +53,7 @@ public class TheOffice {
             String[] products = null;
             int maxTaskComplexityLevel = -1;
 
+            System.out.println("Main for loop times ran: " + i);
             //Check which type of employee
             String type = fs.nextLine().trim();
 
@@ -134,6 +137,15 @@ public class TheOffice {
             else if(type.equals("Receptionist")){
                 //reads the max task complexity level with newLine statement
                 maxTaskComplexityLevel = Integer.parseInt(fs.nextLine().trim());
+                
+                for (int k = 0; k < taskList.length; k++) {
+                    if (maxTaskComplexityLevel < taskList[k].getLevel()) {
+                        throw new TaskLevelException(taskList[k].getLevel());
+                    }
+                }
+
+
+
 
                 //sets workers[i] to a new Receptionist Object
                 workers[i] = new Receptionist(IDNumber, name, taskList, assistantManager, maxTaskComplexityLevel);
@@ -161,6 +173,7 @@ public class TheOffice {
     }
 
     public void setWorkers(Employee[] a) {
+        workers = new Employee[a.length];
         for (int i = 0; i < workers.length; i++) {
             workers[i] = a[i];
         }
@@ -223,6 +236,7 @@ public class TheOffice {
 
 
     public static void main(String[] args) throws TaskLevelException{
+        
         //Gets location for file
         TheOffice o = new TheOffice((args[0]+".txt"));
 
@@ -234,6 +248,7 @@ public class TheOffice {
 
         //Prints the sorted(by name) level display
         System.out.println("\n\n\n" + o.levelDisplay());
-    }
+
+}
 
 }
