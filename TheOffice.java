@@ -138,15 +138,7 @@ public class TheOffice {
                 //reads the max task complexity level with newLine statement
                 maxTaskComplexityLevel = Integer.parseInt(fs.nextLine().trim());
                 
-                for (int k = 0; k < taskList.length; k++) {
-                    if (maxTaskComplexityLevel < taskList[k].getLevel()) {
-                        throw new TaskLevelException(taskList[k].getLevel());
-                    }
-                }
-
-
-
-
+              
                 //sets workers[i] to a new Receptionist Object
                 workers[i] = new Receptionist(IDNumber, name, taskList, assistantManager, maxTaskComplexityLevel);
 
