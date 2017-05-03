@@ -56,9 +56,6 @@ public class RegionalManager extends Employee {
         return result;
     }
 
-
-
-
     //equals method. Do not edit!
     public boolean equals(RegionalManager r){
         boolean equal = super.equals(r);
