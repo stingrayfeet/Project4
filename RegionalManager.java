@@ -1,32 +1,32 @@
 public class RegionalManager extends Employee {
 
     //member variables--
-    private int regionNum;
+    private int RegionNum;
     private Employee[] subordinates;
     private int minimumTask;
 
     //constructor 1 (includes Employee[] subordinates as a parameter)--
-    public RegionalManager(int IDNumber, String name, Task[] taskList, int regionNum, Employee[] subordinates, int minimumTask) {
+    public RegionalManager(int IDNumber, String name, Task[] taskList, int RegionNum, Employee[] subordinates, int minimumTask) {
         super(IDNumber, name, taskList);
-        this.regionNum = regionNum;
+        this.RegionNum = RegionNum;
         this.subordinates = subordinates;
         this.minimumTask = minimumTask;
     }
 
     //constructor 2 (excludes Employee[] subordinates as a parameter)--
-    public RegionalManager(int IDNumber, String name, Task[] taskList, int regionNum, int minimumTask) {
+    public RegionalManager(int IDNumber, String name, Task[] taskList, int RegionNum, int minimumTask) {
         super(IDNumber, name, taskList);
-        this.regionNum = regionNum;
+        this.RegionNum = RegionNum;
         this.minimumTask = minimumTask;
     }
 
     //behaviors (getters and setters for member variables)--
     public int getRegionNum() {
-        return regionNum;
+        return RegionNum;
     }
 
-    public void setRegionNum(int regionNum) {
-        this.regionNum = regionNum;
+    public void setRegionNum(int RegionNum) {
+        this.RegionNum = RegionNum;
     }
 
     public Employee[] getSubordinates() {
@@ -47,7 +47,7 @@ public class RegionalManager extends Employee {
 
     //returns a string formatted with the superclass (Employee) toString method, along with the RegionalManager object's regionNum and minimumTask member variables
     public String toString() {
-        String result = "Regional Manager\n" + super.toString() + "\nRegion Number: " + regionNum + "\nMinimum Task Level: " + minimumTask+ "\nEmployees: ";
+        String result = "Regional Manager\n" + super.toString() + "\nRegion Number: " + RegionNum + "\nMinimum Task Level: " + minimumTask+ "\nEmployees: ";
         for (int i = 0; i < subordinates.length; i++) {
             String temp = "\n" + subordinates[i].toString();
             result += temp;
@@ -62,7 +62,7 @@ public class RegionalManager extends Employee {
     //equals method. Do not edit!
     public boolean equals(RegionalManager r){
         boolean equal = super.equals(r);
-        equal = equal && (r.getRegionNum() == regionNum);
+        equal = equal && (r.getRegionNum() == RegionNum);
         equal = equal && (r.getMinimumTask() == minimumTask);
         for(int i = 0; i < subordinates.length; i++){
             equal = equal && (subordinates[i].equals(r.getSubordinates()[i]));
