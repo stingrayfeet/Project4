@@ -21,7 +21,7 @@ public class Task {
 
     //returns a string formatted with task and level
     public String toString() {
-        String ans = String.format("\tTask: %s\t\tLevel: %d",getName(), getLevel());
+        String ans = String.format("\tTask: %s\tLevel: %d",getName(), getLevel());
         return ans;
     }
 
